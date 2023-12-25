@@ -7,7 +7,18 @@
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "XS": "react-native run-ios --device='iPhone (Siarhei)'",
+    "SE": "react-native run-ios --simulator='iPhone SE (3rd generation)'",
+    "ip11Max": "react-native run-ios --simulator='iPhone 11 Pro Max'",
+    "ip14Pro": "react-native run-ios --simulator='iPhone 14 Pro'",
+    "ip14Max": "react-native run-ios --simulator='iPhone 14 Pro Max'",
+    "ip11": "react-native run-ios --simulator='iPhone 11'",
+    "ip12": "react-native run-ios --simulator='iPhone 12'",
+    "ip13": "react-native run-ios --simulator='iPhone 13'",
+    "ipad": "react-native run-ios --simulator='iPad (8th generation)'",
+    "iX": "react-native run-ios --simulator='iPhone X'",
+    "i8": "react-native run-ios --simulator='iPhone 8'"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.3.1",
