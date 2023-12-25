@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { useFocusEffect } from '@react-navigation/native';
+import { StackActions, useFocusEffect } from '@react-navigation/native';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -10,6 +10,7 @@ import {
   TextInput,
   StyleSheet,
   ScrollView,
+  StatusBar,
 } from 'react-native';
 import Modal from 'react-native-modal';
 
@@ -36,7 +37,8 @@ function Register() {
     return true;
   }, [navigation]);
   const onLoginForm = () => {
-    navigation.navigate('LoginScreen');
+    // navigation.dispatch(StackActions.replace('LoginScreen'));
+    navigation.navigate('Login');
   };
   // useEffect(() => {
   //   BackHandler.addEventListener('hardwareBackPress', handleBackPress);
@@ -96,15 +98,15 @@ function Register() {
   // };
 
   const onBack = () => {
-    navigation.goBack();
+    navigation.dispatch(StackActions.popToTop());
   };
 
   return (
     <Modal
       isVisible={modal}
       deviceHeight={DEVICE_HEIGHT + 50}
-      backdropTransitionInTiming={700}
-      backdropTransitionOutTiming={700}
+      backdropTransitionInTiming={0}
+      backdropTransitionOutTiming={0}
       backdropOpacity={0.6}
       backdropColor="#06122F"
       style={styles.modal}
@@ -204,7 +206,7 @@ function Register() {
                 {/* // /> */}
                 {/* /!* {formattedValue.length > 0 && <Image source={Images.iconPhone} style={styles.icEnter} />} *!/ */}
               </View>
-              <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.bigButton}>
+              <TouchableOpacity onPress={onLoginForm} style={styles.bigButton}>
                 <Text style={styles.bigBtnText}>Sign up for the online course</Text>
                 <MemoArrow style={{ transform: [{ scale: 0.8 }] }} />
               </TouchableOpacity>

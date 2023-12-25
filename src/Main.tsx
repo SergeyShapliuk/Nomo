@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, View } from 'react-native';
 
 import Modals from './components/modal/Modals';
@@ -18,8 +17,14 @@ function Main() {
 
   return (
     <View style={styles.container}>
-      {!true ? <AuthNavigation /> : <LessonStackNavigation />}
-      <Modals open={!true}/>
+      {true ? <AuthNavigation /> : <LessonStackNavigation />}
+      <Modals
+        openCongratulation={!true}
+        openErrorLogin={!true}
+        openErrorPersonalAccount={!true}
+        openActivateAccount={!true}
+        openCompletedCourse={!true}
+      />
     </View>
   );
 }

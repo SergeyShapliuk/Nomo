@@ -4,12 +4,11 @@ import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView } from 'rea
 
 import { Images } from '../../assets/Images';
 import MemoButton from '../../assets/svg/Button';
-import MemoNomoLogo from '../../assets/svg/NomoLogo';
 import { DEVICE_HEIGHT } from '../../common/constants';
 import Complete from '../../components/complete/Complete';
 import Quiz from '../../components/quiz/Quiz';
 
-function Lesson3() {
+function Lesson4() {
   const [quizStart, setQuizStart] = useState<boolean>(false);
 
   const onOpenQuizHandel = useCallback(() => {
@@ -17,41 +16,11 @@ function Lesson3() {
   }, [quizStart]);
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          height: 66,
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          alignSelf: 'stretch',
-          backgroundColor: '#E2F0FF',
-        }}
-      >
-        <MemoNomoLogo />
-        <View
-          style={{
-            width: 40,
-            height: 40,
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingVertical: 2,
-            paddingHorizontal: 4,
-            borderRadius: 8,
-            backgroundColor: '#F5F7FA',
-          }}
-        >
-          <TouchableOpacity style={{ gap: 2.5, flexShrink: 0 }}>
-            <View style={{ width: 16, height: 2, backgroundColor: '#06122F' }} />
-            <View style={{ width: 16, height: 2, backgroundColor: '#06122F' }} />
-            <View style={{ width: 16, height: 2, backgroundColor: '#06122F' }} />
-          </TouchableOpacity>
-        </View>
-      </View>
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.content}>
           <View style={styles.title}>
-            <Text style={styles.textLesson}>Lesson 3</Text>
-            <Text style={styles.textTitle}>How to become a millionaire through investments</Text>
+            <Text style={styles.textLesson}>Lesson 4</Text>
+            <Text style={styles.textTitle}>Basics of fundamental market analysis</Text>
             <Text style={styles.textDescription}>
               How to create a personal financial plan. Types of investment instruments
             </Text>
@@ -174,4 +143,4 @@ const styles = StyleSheet.create({
     // top: 95,
   },
 });
-export default Lesson3;
+export default Lesson4;
