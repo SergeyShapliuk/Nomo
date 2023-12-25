@@ -3,10 +3,10 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from '../screens/authScreens/Login';
+import Recovery from '../screens/authScreens/Recovery';
 import Register from '../screens/authScreens/Register';
 import HomeScreen from '../screens/HomeScreen';
 import { AuthStackParamList } from '../types/types';
-import Recovery from "../screens/authScreens/Recovery";
 
 const AuthStack = createStackNavigator<AuthStackParamList>();
 

@@ -61,6 +61,15 @@
         "variables": false
       }
     ],
+//    "no-param-reassign": [
+//      "error",
+//      {
+//        "props": true,
+//        "ignorePropertyModificationsFor": [
+//          "state"
+//        ]
+//      }
+//    ],
     "prettier/prettier": "error",
     "default-param-last": "off",
     "jsx-a11y/label-has-for": "off",

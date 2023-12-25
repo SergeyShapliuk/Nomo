@@ -5,8 +5,19 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import BrokersIcon from '../assets/svg/BrokersIcon';
 import DiagonalArrow from '../assets/svg/DiagonalArrow';
 import { DEVICE_HEIGHT } from '../common/constants';
+import { useAppSelector } from '../store/store';
+import { useLessonAppNavigation } from '../types/types';
 
 function TabNavigation() {
+  const navigation = useLessonAppNavigation();
+
+  const routeName = useAppSelector(state => state.mainReducer.routeName);
+
+  console.log('TabNavigation', routeName);
+
+  const onNextLessonHandle = () => {
+    navigation.navigate(routeName);
+  };
   return (
     <View
       style={{
@@ -26,6 +37,11 @@ function TabNavigation() {
       }}
     >
       <TouchableOpacity
+        onPress={() => {
+          if (navigation.canGoBack()) {
+            navigation.goBack();
+          }
+        }}
         style={{
           width: 80,
           height: 40,
@@ -67,6 +83,7 @@ function TabNavigation() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={onNextLessonHandle}
         style={{
           width: 80,
           height: 40,

@@ -1,4 +1,8 @@
-import { NavigationProp, useNavigation, useRoute } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+
+// export const ROUTES = {
+//   Lesson1: 'Lessodn1',
+// } as const;
 
 export type AuthStackParamList = {
   Home: undefined;
@@ -14,14 +18,25 @@ export type LessonStackParamList = {
   Lesson5: undefined;
   Lesson6: undefined;
   Lesson7: undefined;
+  List: undefined;
 };
-export type BottomParamList = {};
+// export type RootParamsList = {
+//   Auth: AuthStackParamList;
+//   Lessons: LessonStackParamList;
+// };
+// export type BottomParamList = {};
 // export type PopUpRegProps = StackScreenProps<RootStackParamList, 'PopUpReg'>;
+// type NavigationProp = StackNavigationProp<LessonStackParamList, keyof LessonStackParamList>;
 
-export type UseAuthNavigationType = NavigationProp<AuthStackParamList>;
-export type UseLessonNavigationType = NavigationProp<LessonStackParamList>;
+type UseAuthNavigationType = NavigationProp<AuthStackParamList>;
+type UseRootAppNavigationType = NavigationProp<LessonStackParamList>;
 
 export const useAuthAppNavigation = () => useNavigation<UseAuthNavigationType>();
-export const useLessonAppNavigation = () => useNavigation<UseLessonNavigationType>();
+export const useLessonAppNavigation = () => useNavigation<UseRootAppNavigationType>();
 
-export const useLessonAppRoute = () => useRoute();
+// export const useLessonAppRoute = () => useRoute();
+// declare global {
+//   namespace ReactNavigation {
+//     interface RootParamList extends LessonStackParamList {}
+//   }
+// }

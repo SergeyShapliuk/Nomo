@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { useFocusEffect } from '@react-navigation/native';
+import { StackActions, useFocusEffect } from '@react-navigation/native';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -96,15 +96,15 @@ function Recovery() {
   // };
 
   const onBack = () => {
-    navigation.goBack();
+    navigation.dispatch(StackActions.popToTop());
   };
 
   return (
     <Modal
       isVisible={modal}
       deviceHeight={DEVICE_HEIGHT + 50}
-      backdropTransitionInTiming={700}
-      backdropTransitionOutTiming={700}
+      backdropTransitionInTiming={0}
+      backdropTransitionOutTiming={0}
       backdropOpacity={0.6}
       backdropColor="#06122F"
       style={styles.modal}
