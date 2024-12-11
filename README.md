@@ -1,3 +1,7 @@
+
+![nomo Academy App](https://github.com/user-attachments/assets/a450b1dc-9036-412a-8ff4-f66f4f02b1e5)
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
